@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Menu and actions for tasks -->
+<odoo>
+    <!-- Actions to the menu -->
+    <record id="tasks_action" model="ir.actions.act_window">
+        <field name="name">Tasks</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">daily.task</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new task, daily, weekly or monthly
+            </p>
+
+        </field>
+    </record>
+    <!-- Top menu item -->
+    <menuitem id="tasks_root"
+              name="Tasks"
+              sequence="10"/>
+    <menuitem id="tasks_tasks_root"
+            name="Tasks"
+            parent="tasks_root"
+            sequence="10"/>
+    <menuitem id="tasks_tasks_daily"
+            name="Daily Tasks"
+            parent="tasks_tasks_root"
+            action="tasks_action"
+            sequence="10"/>
+    <menuitem id="tasks_tasks_weekly"
+            name="Weekly Tasks"
+            parent="tasks_tasks_root"
+            action="tasks_action"
+            sequence="10"/>
+    <menuitem id="tasks_tasks_monthly"
+            name="Monthly Tasks"
+            parent="tasks_tasks_root"
+            action="tasks_action"
+            sequence="10"/>
+
+</odoo>
