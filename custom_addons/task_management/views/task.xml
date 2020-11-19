@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Menu and actions for tasks -->
 <odoo>
+
+    <!-- adding tree  view to the menu-->
+    <record id="task_tree" model="ir.ui.view">
+        <field name="name">daily.task.tree</field>
+        <field name="model">daily.task</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="task_name"/>
+                <field name="task_description"/>
+                <field name="task_owner"/>
+                <field name="task_type"/>
+                <field name="task_startTime"/>
+                <field name="task_endTime"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- adding form view to the menu-->
+    <record id="task_form" model="ir.ui.view">
+        <field name="name">daily.task.form</field>
+        <field name="model">daily.task</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="task_name"/>
+                            <field name="task_description"/>
+                        </group>
+                        <group>
+                            <field name="task_owner"/>
+                            <field name="task_type"/>
+                        </group>
+                        <group>
+                            <field name="task_startTime"/>
+                            <field name="task_endTime"/>
+                        </group>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
     <!-- Actions to the menu -->
     <record id="tasks_action" model="ir.actions.act_window">
         <field name="name">Tasks</field>
@@ -19,23 +62,24 @@
               name="Tasks"
               sequence="10"/>
     <menuitem id="tasks_tasks_root"
-            name="Tasks"
-            parent="tasks_root"
-            sequence="10"/>
+              name="Tasks"
+              parent="tasks_root"
+              sequence="10"/>
     <menuitem id="tasks_tasks_daily"
-            name="Daily Tasks"
-            parent="tasks_tasks_root"
-            action="tasks_action"
-            sequence="10"/>
+              name="Daily Tasks"
+              parent="tasks_tasks_root"
+              action="tasks_action"
+              sequence="10"/>
     <menuitem id="tasks_tasks_weekly"
-            name="Weekly Tasks"
-            parent="tasks_tasks_root"
-            action="tasks_action"
-            sequence="10"/>
+              name="Weekly Tasks"
+              parent="tasks_tasks_root"
+              action="tasks_action"
+              sequence="10"/>
     <menuitem id="tasks_tasks_monthly"
-            name="Monthly Tasks"
-            parent="tasks_tasks_root"
-            action="tasks_action"
-            sequence="10"/>
+              name="Monthly Tasks"
+              parent="tasks_tasks_root"
+              action="tasks_action"
+              sequence="10"/>
+
 
 </odoo>

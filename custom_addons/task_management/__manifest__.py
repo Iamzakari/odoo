@@ -10,6 +10,7 @@
     'licence':'LGPL-3',
     'depends': [],
     'data': [
+        'security/ir.model.access.csv',
         'views/task.xml'
     ],
     'demo': [],

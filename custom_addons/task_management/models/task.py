@@ -13,6 +13,6 @@ class DailyTask(models.Model):
         ('morning', 'Morning'),
         ('afternoon', 'Afternoon'),
         ('home', 'Home'),
-    ], required=True, default='Morning')
+    ], required=True) #default='Morning')
     task_startTime = fields.Date(index=True, help="Starting time")
     task_endTime = fields.Date(index=True, help="Ending time")
